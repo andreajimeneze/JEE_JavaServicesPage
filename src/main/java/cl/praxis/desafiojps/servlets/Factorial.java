@@ -1,11 +1,12 @@
-package cl.praxis.desafiojps;
+package cl.praxis.desafiojps.servlets;
 
-import cl.praxis.desafiojps.models.Utilities;
 import java.io.*;
+
+import cl.praxis.desafiojps.utils.Utilities;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
-@WebServlet(name = "factorial", value = "/factorial")
+@WebServlet(name = "Factorial", value = "/factorial")
 public class Factorial extends HttpServlet {
 
     public Factorial() {
@@ -19,11 +20,11 @@ public class Factorial extends HttpServlet {
         Utilities utilities = new Utilities();
         String factorial = String.valueOf(utilities.factorial(number));
 
-        response.getWriter().append("El factorial de " + number + "es ").append(factorial);
+        response.getWriter().append("El factorial de ").append(String.valueOf(number)).append("es ").append(factorial);
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         doGet(request, response);
     }
 }

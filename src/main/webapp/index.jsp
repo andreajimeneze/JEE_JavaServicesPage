@@ -1,4 +1,8 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@page import="cl.praxis.desafiojps.utils.Utilities"%>
+<%
+  Utilities utilesgeneral = new Utilities();
+%>
 <!DOCTYPE html>
 <html>
 <head>

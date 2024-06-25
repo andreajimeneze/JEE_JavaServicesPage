@@ -1,11 +1,12 @@
-package cl.praxis.desafiojps;
+package cl.praxis.desafiojps.servlets;
 
-import cl.praxis.desafiojps.models.Utilities;
 import java.io.*;
+
+import cl.praxis.desafiojps.utils.Utilities;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
-@WebServlet(name = "impar", value = "/impar")
+@WebServlet(name = "Impar", value = "/impar")
 public class Impar extends HttpServlet {
   public Impar() {
       super();
@@ -14,13 +15,13 @@ public class Impar extends HttpServlet {
         int number = Integer.parseInt(request.getParameter("value"));
 
         Utilities utilities = new Utilities();
-        String parOImpar = utilities.parOimpar(number);
+        String parImpar = utilities.parOImpar(number);
 
-        response.getWritter().append("El número" + number + "es: ").append(parOimpar);
+        response.getWriter().append("El numero ").append(String.valueOf(number)).append(" es: ").append(parImpar);
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         doGet(request, response);
     }
 }
